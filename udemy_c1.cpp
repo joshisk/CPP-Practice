@@ -9,7 +9,7 @@ using namespace std;
 int main(){
     
     vector<int> list {};
-    string menu ("P - Print numbers\nA - Display the sum of the list numbers\nM - Display the mean of the list numbers\nS - Display the smallest number\nL - Display the largest number\nO - Display number of occurences of list number\nC - Clear the list\nQ - Quit");
+    string menu ("P - Print numbers\nA - Add a number into the list\nM - Display the mean of the list numbers\nS - Display the smallest number\nL - Display the largest number\nO - Display the number of occurences of an input number in the list\nC - Clear the list\nQ - Quit");
     
     char input{};
     unsigned int list_input {}; 
