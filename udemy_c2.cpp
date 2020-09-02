@@ -16,14 +16,23 @@ int main(){
     
     for (char idx : secret_msg){
         size_t pos_alphabet = alphabet.find(idx);
-        //cout << pos_alphabet << " " << alphabet.at(pos_alphabet) << endl;
-        encrypted_msg = encrypted_msg + key.at(pos_alphabet);
+        if (pos_alphabet != string::npos){
+            encrypted_msg += key.at(pos_alphabet);
+        }
+        else{
+            encrypted_msg += idx;
+        }
     }
     cout << "\nEncrypting.....\n" << endl;
     cout << "The encrypted message is: " << encrypted_msg << endl;
     for (char idx : encrypted_msg){
         size_t pos_key = key.find(idx);
-        decrypted_msg = decrypted_msg + alphabet.at(pos_key);
+        if (pos_key != string::npos){
+            decrypted_msg += alphabet.at(pos_key);
+        }
+        else{
+            decrypted_msg += idx;
+        }
     }
     cout << "\nDecrypting.....\n" << endl;
     cout << "The decrypted message is: " << decrypted_msg << endl;
