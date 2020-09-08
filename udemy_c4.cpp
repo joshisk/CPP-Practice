@@ -7,10 +7,8 @@ using namespace std;
 
 // prints menu // Recursion function
 void PrintMenu();
-// Enter selection from the menu
+// Enter selection from the menu // Recursion function
 void EnterSelection(char input);
-// Checks for uppercase selection
-void UppercaseSelection(char input);
 //Prints the list
 void PrintList(vector<int> &list);
 // Adds a number into the list
