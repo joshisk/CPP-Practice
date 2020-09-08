@@ -26,8 +26,6 @@ void ClearList(vector<int> &list);
 // Quits the program // base condition to end recursion function
 void QuitProgram();
 
-
-
 int main(){
     char input;
     PrintMenu();
