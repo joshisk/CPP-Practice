@@ -5,22 +5,22 @@
 
 using namespace std;
 
-// prints menu // Recursion function
+// prints menu 
 void PrintMenu();
-// Enter selection from the menu // Recursion function
+// Enter selection from the menu
 void EnterSelection(char input);
 //Prints the list
-void PrintList(vector<int> &list);
+void PrintList(const vector<int> &list);
 // Adds a number into the list
 void AddToList(vector<int> &list, int input_number);
 // Calculates and prints the mean of the list numbers
-size_t PrintMean(vector<int> &list);
+double PrintMean(const vector<int> &list);
 // Calculates and prints the smallest number of the list
-size_t PrintSmallest(vector<int> &list);
+size_t PrintSmallest(const vector<int> &list);
 // Calculates and prints the largest number of the list
-size_t PrintLargest(vector<int> &list);
+size_t PrintLargest(const vector<int> &list);
 // Calculates and prints the number of occurences of an input number from the list
-int PrintOccurrence(vector<int> &list, size_t occurrence_input);
+int PrintOccurrence(const vector<int> &list, size_t occurrence_input);
 // Clears the list
 void ClearList(vector<int> &list);
 // Quits the program // base condition to end recursion function
@@ -83,7 +83,7 @@ void EnterSelection(char input){
     }
 }
 
-void PrintList(vector<int> &list){
+void PrintList(const vector<int> &list){
     if (list.size() != 0){
         cout << "\nPrinting the elements in the list: [ ";
         for (auto value : list){
@@ -102,15 +102,15 @@ void AddToList(vector<int> &list, int input_number){
     list.push_back(input_number);
 }
 
-size_t PrintMean(vector<int> &list){
-    size_t avg{};
+double PrintMean(const vector<int> &list){
+    double avg{};
     size_t sum{};
     if (list.size() != 0){
         cout << "\nMean of the elements in the list: ";
         for (auto value : list){
             sum = sum + value;
         }
-        avg = sum / list.size();
+        avg = static_cast <double> (sum) / list.size();
         cout << fixed << setprecision(2) << avg << "\n" << endl;
     }
     else{
@@ -119,7 +119,7 @@ size_t PrintMean(vector<int> &list){
      return avg;
 }
 
-size_t PrintSmallest(vector<int> &list){
+size_t PrintSmallest(const vector<int> &list){
     size_t temp = list.at(0);
     if (list.size() != 0){
         for (auto value : list){
@@ -135,7 +135,7 @@ size_t PrintSmallest(vector<int> &list){
     return temp;
 }
 
-size_t PrintLargest(vector<int> &list){
+size_t PrintLargest(const vector<int> &list){
     size_t temp = list.at(0);
     if(list.size() != 0){
         for (auto value : list){
@@ -151,7 +151,7 @@ size_t PrintLargest(vector<int> &list){
     return temp;
 }
 
-int PrintOccurrence(vector<int> &list, size_t occurrence_input){
+int PrintOccurrence(const vector<int> &list, size_t occurrence_input){
     cout << "\nInput the number to search from the list: ";
     cin >> occurrence_input;
     int count {};
