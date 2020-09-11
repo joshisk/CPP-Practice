@@ -50,11 +50,3 @@ void print(const int *const arr, size_t arr_size){
     }
     cout << "]\n";
 }
-
-
-
-
-
-
-
-
